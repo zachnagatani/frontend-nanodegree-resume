@@ -41,7 +41,7 @@ var work = {
 // 		$(".work-entry:last").append(formattedWorkInfo);
 // }
 
-function displayWork() {
+work.display = function() {
 	for(var indexCount = 0; indexCount < work["jobs"].length; indexCount++) {	
 		$("#workExperience").append(HTMLworkStart);
 
@@ -77,7 +77,7 @@ function displayWork() {
 // 	}
 // }
 
-displayWork();
+work.display();
 
 // Click Log
 $(document).click(function(loc) {
@@ -141,6 +141,8 @@ projects.display = function(){
 	}
 }
 
+projects.display();
+
 // Bio Object
 
 var bio = {
@@ -154,8 +156,90 @@ var bio = {
 			"twitter": "@zachnagatani"
 		},
 
-		"skills": ["HTML5", "CSS3", "JavaScript", "PHP", "Web Design"]
+		"skills": ["HTML5", "CSS3", "JavaScript", "PHP", "Web Design"],
+
+		"biopic": "images/me.jpg"
 	}
+
+bio.display = function(){
+
+		var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
+		$("#header").prepend(formattedHeaderRole);
+
+		var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
+		$("#header").prepend(formattedHeaderName);
+
+		var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+		$("#header").append(formattedWelcomeMsg);
+
+		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+		$("#topContacts").append(formattedMobile);
+
+		var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+		$("#topContacts").append(formattedEmail);
+
+		var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+		$("#topContacts").append(formattedGithub);
+
+		var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+		$("#topContacts").append(formattedTwitter);
+
+		var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+		$("#header").append(formattedBioPic);
+
+
+		// Skills
+
+		if(bio.skills.length > 0 ) {
+			$("#header").append(HTMLskillsStart);
+			
+			var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+			$("#header").append(formattedSkill);
+			
+			var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+			$("#header").append(formattedSkill);
+			
+			var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+			$("#header").append(formattedSkill);
+			
+			var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+			$("#header").append(formattedSkill);
+			
+			var formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
+			$("#header").append(formattedSkill);
+}
+
+
+}
+
+bio.display();
+
+// Header
+
+// var formattedHeaderName = HTMLheaderName.replace("%data%", "Zach Nagatani");
+
+// $("#header").append(formattedHeaderName);
+
+// // Skills
+
+// if(bio.skills.length > 0 ) {
+// 	$("#header").append(HTMLskillsStart);
+	
+// 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+// 	$("#header").append(formattedSkill);
+	
+// 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+// 	$("#header").append(formattedSkill);
+	
+// 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+// 	$("#header").append(formattedSkill);
+	
+// 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+// 	$("#header").append(formattedSkill);
+	
+// 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
+// 	$("#header").append(formattedSkill);
+// }
 
 
 // Internationalize Button
@@ -206,7 +290,7 @@ var education = {
 		{
 			"name" : "Udacity",
 			"location" : "San Jose, CA",
-			"degree" : "Front-End Web Developer Nanodegree",
+			"degree" : "Nanodegree",
 			"majors" : ["Front-End Web Development"],
 			"dates" : "2016",
 			"url" : "https://www.udacity.com/"
@@ -248,33 +332,92 @@ var education = {
 	]
 }
 
+education.display = function(){
+	for(var indexCount = 0; indexCount < education.schools.length; indexCount++) {
+		$("#education").append(HTMLschoolStart);
 
-// Header
+		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[indexCount].name);
+		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[indexCount].location);
+		var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[indexCount].degree);
+		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[indexCount].dates);
+		var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[indexCount].majors);
+		var formattedSchoolInfo = formattedSchoolLocation + formattedSchoolDegree + formattedSchoolMajor + formattedSchoolDates;
 
-var formattedHeaderName = HTMLheaderName.replace("%data%", "Zach Nagatani");
+		$(".education-entry:last").append(formattedSchoolName);
+		$(".education-entry:last").append(formattedSchoolDegree);
+		$(".education-entry:last").append(formattedSchoolLocation);
+		$(".education-entry:last").append(formattedSchoolDates);
+		$(".education-entry:last").append(formattedSchoolMajor);
+	}
 
-$("#header").append(formattedHeaderName);
+	$("#education").append(HTMLonlineClasses);
 
-// Skills
+	for(var indexCount = 0; indexCount < education.onlineCourses.length; indexCount++) {
+		$("#education").append(HTMLschoolStart);
 
-if(bio.skills.length > 0 ) {
-	$("#header").append(HTMLskillsStart);
-	
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-	$("#header").append(formattedSkill);
-	
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-	$("#header").append(formattedSkill);
-	
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-	$("#header").append(formattedSkill);
-	
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-	$("#header").append(formattedSkill);
-	
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
-	$("#header").append(formattedSkill);
+		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[indexCount].title);
+		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[indexCount].school);
+		var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[indexCount].dates);
+		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[indexCount].url);
+		var formattedSchoolInfo = formattedSchoolLocation + formattedSchoolDegree + formattedSchoolMajor + formattedSchoolDates;
+		$(".education-entry:last").append(formattedOnlineTitle);
+		$(".education-entry:last").append(formattedOnlineSchool);
+		$(".education-entry:last").append(formattedOnlineDates);
+		$(".education-entry:last").append(formattedOnlineURL);
+	}
+
+	// for(school in education.schools) {
+	// 	$("#education").append(HTMLschoolStart);
+
+	// 	var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools.name);
+	// 	var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools.location);
+	// 	var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools.degree);
+	// 	var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools.dates);
+	// 	var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools.majors);
+	// 	var formattedSchoolInfo = formattedSchoolLocation + formattedSchoolDegree + formattedSchoolMajor + formattedSchoolDates;
+
+	// 	$("#education-entry:last").append(formattedSchoolName);
+	// 	$("#education-entry:last").append(formattedSchoolDegree);
+	// }
 }
+
+education.display();
+
+
+// // Header
+
+// var formattedHeaderName = HTMLheaderName.replace("%data%", "Zach Nagatani");
+
+// $("#header").append(formattedHeaderName);
+
+// // Skills
+
+// if(bio.skills.length > 0 ) {
+// 	$("#header").append(HTMLskillsStart);
+	
+// 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+// 	$("#header").append(formattedSkill);
+	
+// 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+// 	$("#header").append(formattedSkill);
+	
+// 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+// 	$("#header").append(formattedSkill);
+	
+// 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+// 	$("#header").append(formattedSkill);
+	
+// 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
+// 	$("#header").append(formattedSkill);
+// }
+
+// Map
+
+$("#mapDiv").append(googleMap);
+
+initializeMap();
+
+locationFinder();
 
 
 

@@ -18,6 +18,10 @@ h6 {
   overflow: auto;
 }
 
+.img-responsive {
+  max-width: 100%;
+}
+
 .education-entry,
 .work-entry,
 .project-entry {
