@@ -26,7 +26,7 @@ var work = {
 	]
 }
 
-// for(var indexCount = 0; indexCount < work["jobs"].length; indexCount++) {	
+// for(var indexCount = 0; indexCount < work["jobs"].length; indexCount++) {
 // 		$("#workExperience").append(HTMLworkStart);
 
 // 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[indexCount]["employer"]);
@@ -42,7 +42,7 @@ var work = {
 // }
 
 work.display = function() {
-	for(var indexCount = 0; indexCount < work["jobs"].length; indexCount++) {	
+	for(var indexCount = 0; indexCount < work["jobs"].length; indexCount++) {
 		$("#workExperience").append(HTMLworkStart);
 
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[indexCount]["employer"]);
@@ -58,7 +58,7 @@ work.display = function() {
 		}
 }
 
-// function displayWork() {
+// work.display = function() {
 // 	for(job in work.jobs) {
 // 		$("#workExperience").append(HTMLworkStart);
 
@@ -69,7 +69,7 @@ work.display = function() {
 // 		var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 // 		var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 // 		var formattedWorkInfo = formattedWorkDates + formattedWorkLocation + formattedWorkDescription;
-		
+
 // 		$(".work-entry:last").append(formattedEmployerTitle);
 // 		$(".work-entry:last").append(formattedWorkInfo);
 
@@ -153,7 +153,8 @@ var bio = {
 			"mobile": "408-509-4390",
 			"email": "zachnagatani@gmail.com",
 			"github": "zachnagatani",
-			"twitter": "@zachnagatani"
+			"twitter": "@zachnagatani",
+			"location": "San Jose, CA"
 		},
 
 		"skills": ["HTML5", "CSS3", "JavaScript", "PHP", "Web Design"],
@@ -184,6 +185,9 @@ bio.display = function(){
 		var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 		$("#topContacts").append(formattedTwitter);
 
+		var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+		$("#topContacts").append(formattedLocation);
+
 		var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
 		$("#header").append(formattedBioPic);
 
@@ -192,19 +196,19 @@ bio.display = function(){
 
 		if(bio.skills.length > 0 ) {
 			$("#header").append(HTMLskillsStart);
-			
+
 			var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
 			$("#header").append(formattedSkill);
-			
+
 			var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
 			$("#header").append(formattedSkill);
-			
+
 			var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
 			$("#header").append(formattedSkill);
-			
+
 			var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
 			$("#header").append(formattedSkill);
-			
+
 			var formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
 			$("#header").append(formattedSkill);
 }
@@ -224,19 +228,19 @@ bio.display();
 
 // if(bio.skills.length > 0 ) {
 // 	$("#header").append(HTMLskillsStart);
-	
+
 // 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
 // 	$("#header").append(formattedSkill);
-	
+
 // 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
 // 	$("#header").append(formattedSkill);
-	
+
 // 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
 // 	$("#header").append(formattedSkill);
-	
+
 // 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
 // 	$("#header").append(formattedSkill);
-	
+
 // 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
 // 	$("#header").append(formattedSkill);
 // }
@@ -245,9 +249,9 @@ bio.display();
 // Internationalize Button
 
 function inName() {
-	
+
 	var splitName = bio.name.trim().split(" ");
-	console.log(splitName); 
+	console.log(splitName);
 
 	// var firstLetter = splitName[0].slice(0, 1);
 
@@ -275,12 +279,12 @@ $("#main").append(internationalizeButton);
 
 // function locationizer(work_obj) {
 //     var locationArray = [];
-    
+
 //     for (var indexCount = 0; indexCount < work_obj.length; indexCount++) {
 //         var newLocation = work_obj[indexCount].location;
 //         locationArray.push(newLocation);
 //     }
-    
+
 //     return locationArray;
 // }
 
@@ -298,7 +302,7 @@ var education = {
 	],
 
 	"onlineCourses": [
-		
+
 		{
 			"title" : "Bootstrap to WordPress",
 			"school" : "Udemy",
@@ -394,19 +398,19 @@ education.display();
 
 // if(bio.skills.length > 0 ) {
 // 	$("#header").append(HTMLskillsStart);
-	
+
 // 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
 // 	$("#header").append(formattedSkill);
-	
+
 // 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
 // 	$("#header").append(formattedSkill);
-	
+
 // 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
 // 	$("#header").append(formattedSkill);
-	
+
 // 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
 // 	$("#header").append(formattedSkill);
-	
+
 // 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
 // 	$("#header").append(formattedSkill);
 // }
@@ -414,10 +418,6 @@ education.display();
 // Map
 
 $("#mapDiv").append(googleMap);
-
-initializeMap();
-
-locationFinder();
 
 
 
