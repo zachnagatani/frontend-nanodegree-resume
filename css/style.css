@@ -146,12 +146,6 @@ a:hover {
   line-height: 28px;
 }
 
-#skills {
-  width: 60%;
-  float: left;
-  display: inline;
-}
-
 #skills-h3 {
   color: #333;
   display: none;
@@ -280,74 +274,4 @@ span {
   .biopic {
     display: block;
   }
-}
-
-progress, progress[role] {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  border: none;
-  background-size: auto;
-  height: 100px;
-  width: 100%;
-}
-
-// The unordered list
-.skill-list {
-  list-style: none;
-  margin: 0;
-  padding: 1em;
-}
-
-// The list item
-.skill {
-  margin-bottom: 1em;
-  position: relative;
-  h3 {
-    color: #fff;
-    font-size: 2em;
-    font-family: "Helvetica Neue", arial, sans-serif;
-    left: 1em;
-    line-height: 1;
-    position: absolute;
-    top: 1em;
-  }
-  ::-webkit-progress-value {
-    -webkit-animation: bar-fill 2s;
-    width: 0px;
-  }
-}
-
-// The background colors
-.skill-1::-webkit-progress-value {
-  background: #ff9e2c;
-}
-
-.skill-1::-moz-progress-bar {
-  background: #ff9e2c;
-}
-
-.skill-2::-webkit-progress-value {
-  background: #4ecdc4;
-}
-
-.skill-2::-moz-progress-bar {
-  background: #4ecdc4;
-}
-
-.skill-3::-webkit-progress-value {
-  background: #ff6b6b;
-}
-
-.skill-3::-moz-progress-bar {
-  background: #ff6b6b;
-}
-
- // The keyframes
-@-webkit-keyframes bar-fill {
-  0% { width: 0; }
-}
-
-@keyframes bar-fill {
-  0% { width: 0; }
 }

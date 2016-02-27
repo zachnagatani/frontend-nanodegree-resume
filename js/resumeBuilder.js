@@ -60,7 +60,6 @@ bio.display = function(){
 	if(bio.skills.length > 0 ) {
 		// Append the h3 for the skills section to the page
 		$("#header").append(HTMLskillsStart);
-		// $("#skills").append(HTMLskillList);
 
 		// Create formatted variable for each skill and append to the page
 		for (skill in bio.skills) {
