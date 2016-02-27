@@ -69,17 +69,9 @@ button:active {
   transform: translateY(5px);
 }
 
-
-
-
-
 body {
   font-size: 18px;
 }
-
-/*#main {
-  background: #04325B;
-}*/
 
 .container {
   max-width: 960px;
@@ -115,11 +107,6 @@ h1 {
   background: #0E5492;
 }
 
-#projects {
-  background: #fff;
-  margin-bottom: 5px;
-}
-
 .role {
   font-weight: 600;
   color: #333;
@@ -129,12 +116,8 @@ h1 {
   text-align: center;
 }
 
-#workExperience {
-  margin-bottom: 5px;
-}
-
 h2 {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 24px;
   color: #0E5492;
   line-height: 29px;
@@ -163,7 +146,6 @@ h5 {
 
 }
 
-
 .date-text {
   font-style: italic;
   font-size: 14px;
@@ -188,7 +170,7 @@ p {
 }
 
 a {
-  color: #049860;
+  color: #497FB0;
   text-decoration: underline;
   margin-top: 10px;
   display: block;
@@ -218,22 +200,31 @@ a:hover {
   background: #43B68B;
 }
 
+#workExperience {
+  margin-bottom: 5px;
+}
+
+#projects {
+  background: #fff;
+  margin-bottom: 5px;
+}
+
 #lets-connect h2 {
   color: #fff;
 }
 
 #lets-connect span.orange-text {
-  color: #fff;
+  color: #333;
 }
 
 .orange-text {
   color: #333;
-  font-weight: 400;00;
+  font-weight: 400;
 }
 
 .white-text {
   font-weight: bold;
-  color: #497FB0;
+  color: #049860;
 }
 
 .gray {
@@ -286,7 +277,10 @@ span {
 
 #lets-connect {
   text-align: center;
+}
 
+#lets-connect .white-text {
+ color: #fff;
 }
 
 /* Media queries to handle various device widths */

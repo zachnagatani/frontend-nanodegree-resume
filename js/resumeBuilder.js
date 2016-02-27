@@ -255,10 +255,10 @@ education.display = function(){
 		$("#education").append(HTMLschoolStart);
 
 		// Create variables for the info in each onlineCourse
-		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[indexCount].title);
+		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[indexCount].title).replace("#", education.onlineCourses[indexCount].url);
 		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[indexCount].school);
 		var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[indexCount].dates);
-		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[indexCount].url);
+		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[indexCount].url).replace("#", education.onlineCourses[indexCount].url);
 		var formattedSchoolInfo = formattedSchoolLocation + formattedSchoolDegree + formattedSchoolMajor + formattedSchoolDates;
 
 		// Append the various info the page
