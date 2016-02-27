@@ -140,7 +140,8 @@ var projects = {
 			"title": "Responsive Portfolio",
 			"dates": "2016",
 			"description": "A one page, responsive portfolio used to showcase projects. Built using HTML5 semantic tags and a custom CSS grid system.",
-			"images": ["images/portfolio1.png"]
+			"images": ["images/portfolio1.png"],
+			"url" : "#"
 		}
 
 	]
@@ -153,7 +154,7 @@ projects.display = function(){
 		$("#projects").append(HTMLprojectStart);
 
 		// Create and append formatted variables for all project info
-		var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project]["title"]);
+		var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project]["title"]).replace("#", projects.projects[project]["url"]);
 		$(".project-entry:last").append(formattedProjectTitle);
 
 		var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project]["dates"]);
@@ -231,7 +232,7 @@ education.display = function(){
 		$("#education").append(HTMLschoolStart);
 
 		// Creat formatted variables for all the info in each school
-		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[indexCount].name);
+		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[indexCount].name).replace("#", education.schools[indexCount].url);
 		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[indexCount].location);
 		var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[indexCount].degree);
 		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[indexCount].dates);
