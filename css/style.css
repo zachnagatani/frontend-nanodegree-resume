@@ -11,7 +11,20 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  font-size: 18px;
+}
+
+/*#main {
+  background: #04325B;
+}*/
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .clear-fix {
@@ -28,17 +41,43 @@ h6 {
   padding: 0 5%;
 }
 
+#education {
+  margin-bottom: 5px;
+}
+
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #0E5492;
   line-height: 48px;
-  display: inline;
+  text-align: center;
+}
+
+#main {
+  background: #0E5492;
+}
+
+#projects {
+  background: #fff;
+  margin-bottom: 5px;
+}
+
+.role {
+  font-weight: 600;
+  color: #333;
+}
+
+.center-text {
+  text-align: center;
+}
+
+#workExperience {
+  margin-bottom: 5px;
 }
 
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #0E5492;
   line-height: 29px;
   padding: 10px;
 }
@@ -46,7 +85,7 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
+  color: #497FB0;
   line-height: 22px;
 }
 
@@ -84,45 +123,68 @@ h5 {
 }
 
 p {
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   line-height: 21px;
 }
 
 a {
-  color: #1199c3;
-  text-decoration: none;
+  color: #049860;
+  text-decoration: underline;
   margin-top: 10px;
   display: block;
+}
+
+a:hover {
+  font-weight: bold;
 }
 
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #f3f3f3;
+  color: #000;
   line-height: 28px;
 }
 
+#skills {
+  width: 60%;
+  float: left;
+  display: inline;
+}
+
 #skills-h3 {
-  color: #f5ae23;
+  color: #333;
   display: none;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #43B68B;
+}
+
+#lets-connect {
+  background: #43B68B;
+}
+
+#lets-connect h2 {
+  color: #fff;
+}
+
+#lets-connect span.orange-text {
+  color: #fff;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #333;
+  font-weight: 400;00;
 }
 
 .white-text {
   font-weight: bold;
-  color: #fff;
+  color: #497FB0;
 }
 
 .gray {
-  background-color: #f3f3f3;
+  background-color: #fff;
   padding-bottom: 10px;
   clear:both;
 }
@@ -133,7 +195,8 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #fff;
+  margin-bottom: 5px;
 }
 
 .flex-box {
@@ -170,13 +233,14 @@ span {
 
 #lets-connect {
   text-align: center;
+
 }
 
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
   #lets-connect {
-    margin-top: 5%;
+    margin-top: 2%;
   }
 }
 
@@ -201,13 +265,14 @@ span {
 #map {
   display: block;
   height: 100%;
-  margin: 0 5%;
 }
 
 #mapDiv {
   height: 400px;
   width: 100%;
+  margin-bottom: 5px;
   padding-bottom: 5%;
+  background: #fff;
 }
 
 @media only screen and (min-width: 750px) {
@@ -215,4 +280,74 @@ span {
   .biopic {
     display: block;
   }
+}
+
+progress, progress[role] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background-size: auto;
+  height: 100px;
+  width: 100%;
+}
+
+// The unordered list
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 1em;
+}
+
+// The list item
+.skill {
+  margin-bottom: 1em;
+  position: relative;
+  h3 {
+    color: #fff;
+    font-size: 2em;
+    font-family: "Helvetica Neue", arial, sans-serif;
+    left: 1em;
+    line-height: 1;
+    position: absolute;
+    top: 1em;
+  }
+  ::-webkit-progress-value {
+    -webkit-animation: bar-fill 2s;
+    width: 0px;
+  }
+}
+
+// The background colors
+.skill-1::-webkit-progress-value {
+  background: #ff9e2c;
+}
+
+.skill-1::-moz-progress-bar {
+  background: #ff9e2c;
+}
+
+.skill-2::-webkit-progress-value {
+  background: #4ecdc4;
+}
+
+.skill-2::-moz-progress-bar {
+  background: #4ecdc4;
+}
+
+.skill-3::-webkit-progress-value {
+  background: #ff6b6b;
+}
+
+.skill-3::-moz-progress-bar {
+  background: #ff6b6b;
+}
+
+ // The keyframes
+@-webkit-keyframes bar-fill {
+  0% { width: 0; }
+}
+
+@keyframes bar-fill {
+  0% { width: 0; }
 }
