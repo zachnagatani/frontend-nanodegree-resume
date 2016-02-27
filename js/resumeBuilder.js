@@ -80,21 +80,24 @@ var work = {
 			"title" : "Volunteer Web Designer/Developer",
 			"location" : "San Diego, CA (remote)",
 			"dates" : "2015-2016",
-			"description" : "Create wireframes, mockups, and visual design of the church website, as well as develop the site in HTMl, CSS, JS, and PHP."
+			"description" : "Create wireframes, mockups, and visual design of the church website, as well as develop the site in HTMl, CSS, JS, and PHP.",
+			"url" : "http://www.churchofthecrosssd.com/"
 		},
 		{
 			"employer" : "First Delivery Services",
 			"title" : "Amazon Delivery Attendent",
 			"location" : "San Jose, CA",
 			"dates" : "2015-2016",
-			"description" : "Ensure the secure delivery of packages to Amazon customers throughout the South Bay."
+			"description" : "Ensure the secure delivery of packages to Amazon customers throughout the South Bay.",
+			"url" : "http://www.firstdeliveryservice.com/"
 		},
 		{
 			"employer" : "Five Guys Burgers and Fries",
 			"title" : "General Manager",
 			"location" : "San Diego, CA",
 			"dates" : "2012-2015",
-			"description" : "Oversee general operations of the restaurant. Hire, train, retain, and lead a team to provide excellent food and customer service in a clean environment. Handle financials and inventory."
+			"description" : "Oversee general operations of the restaurant. Hire, train, retain, and lead a team to provide excellent food and customer service in a clean environment. Handle financials and inventory.",
+			"url" : "http://www.fiveguys.com/"
 		}
 	]
 }
@@ -108,7 +111,7 @@ work.display = function() {
 		$("#workExperience").append(HTMLworkStart);
 
 		// Create formatted variables for the info in the work object
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[indexCount]["employer"]);
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[indexCount]["employer"]).replace("#", work.jobs[indexCount]["url"]);
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[indexCount]["title"]);
 		var formattedEmployerTitle = formattedEmployer + formattedTitle;
 		var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[indexCount]["dates"]);
@@ -293,7 +296,7 @@ function inName() {
 }
 
 // Append the button used to modify the header name/internationalName
-$("#main").append(internationalizeButton);
+$("#header").prepend(internationalizeButton);
 
 // On the click event, create function that passes jQuery's location object as a parameter
 // Store loc.pageX as x

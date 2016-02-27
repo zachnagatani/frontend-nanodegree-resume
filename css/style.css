@@ -14,6 +14,65 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+[role="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+}
+
+/* Reset `button` and button-style `input` default styles */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+    background: none;
+    border: 0;
+    color: inherit;
+    /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-appearance: button; /* for input */
+    -webkit-user-select: none; /* for button */
+       -moz-user-select: none;
+        -ms-user-select: none;
+}
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+
+/* Button interaction taken from http://callmenick.com/post/stylish-css-buttons*/
+button {
+  border: 1px solid #efefef;
+  border-radius: 6px;
+  padding: 10px 20px;
+  background: #43B68B;
+  color: #fff;
+  box-shadow: 0 2px #005F3B;
+}
+
+button:hover {
+  background: #22A976;
+}
+
+button:active {
+  background-color: #22A976;
+  box-shadow: 0 1px #005F3B;
+  transform: translateY(5px);
+}
+
+
+
+
+
 body {
   font-size: 18px;
 }
