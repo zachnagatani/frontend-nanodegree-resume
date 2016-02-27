@@ -233,14 +233,15 @@ education.display = function(){
 
 		// Creat formatted variables for all the info in each school
 		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[indexCount].name).replace("#", education.schools[indexCount].url);
-		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[indexCount].location);
 		var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[indexCount].degree);
+		// Concantenate name and degree for proper styling
+		var formattedSchoolHeader = formattedSchoolName + formattedSchoolDegree;
+		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[indexCount].location);
 		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[indexCount].dates);
 		var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[indexCount].majors);
 
 		// Append the info the last .education-entry
-		$(".education-entry:last").append(formattedSchoolName);
-		$(".education-entry:last").append(formattedSchoolDegree);
+		$(".education-entry:last").append(formattedSchoolHeader);
 		$(".education-entry:last").append(formattedSchoolLocation);
 		$(".education-entry:last").append(formattedSchoolDates);
 		$(".education-entry:last").append(formattedSchoolMajor);
@@ -257,13 +258,14 @@ education.display = function(){
 		// Create variables for the info in each onlineCourse
 		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[indexCount].title).replace("#", education.onlineCourses[indexCount].url);
 		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[indexCount].school);
+		// Concatenate title and school for proper styling
+		var formattedOnlineHeader = formattedOnlineTitle + formattedOnlineSchool;
 		var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[indexCount].dates);
 		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[indexCount].url).replace("#", education.onlineCourses[indexCount].url);
 		var formattedSchoolInfo = formattedSchoolLocation + formattedSchoolDegree + formattedSchoolMajor + formattedSchoolDates;
 
 		// Append the various info the page
-		$(".education-entry:last").append(formattedOnlineTitle);
-		$(".education-entry:last").append(formattedOnlineSchool);
+		$(".education-entry:last").append(formattedOnlineHeader);
 		$(".education-entry:last").append(formattedOnlineDates);
 		$(".education-entry:last").append(formattedOnlineURL);
 	}
