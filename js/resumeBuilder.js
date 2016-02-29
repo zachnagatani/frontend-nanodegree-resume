@@ -1,24 +1,23 @@
 // Create the bio object
-
 var bio = {
-		"name": "Zach Nagatani",
-		"role": "Front-End Web Developer",
-		"welcomeMessage": "Hey! I'm Zach Nagatani. Thanks for taking some time to learn a little bit about me. I hope you find this resume informative!",
-		"contacts": {
-			"mobile": "408-509-4390",
-			"email": "zachnagatani@gmail.com",
-			"github": "zachnagatani",
-			"twitter": "@zachnagatani",
-			"location": "San Jose, CA"
-		},
+	"name": "Zach Nagatani",
+	"role": "Front-End Web Developer",
+	"welcomeMessage": "Hey! I'm Zach Nagatani. Thanks for taking some time to learn a little bit about me. I hope you find this resume informative!",
+	"contacts": {
+		"mobile": "408-509-4390",
+		"email": "zachnagatani@gmail.com",
+		"github": "zachnagatani",
+		"twitter": "@zachnagatani",
+		"location": "San Jose, CA"
+	},
 
-		"skills": ["HTML5", "CSS3", "JavaScript", "PHP", "Web Design"],
+	"skills": ["HTML5", "CSS3", "JavaScript", "PHP", "Web Design"],
 
-		"biopic": "images/me-beach.jpg"
-	}
+	"biopic": "images/me-beach.jpg"
+}
 
 // Create and encapsulate the function used to display bio's info on the page
-bio.display = function(){
+bio.display = function() {
 
 	// Create and append formatted variables for all bio info
 	var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -57,14 +56,14 @@ bio.display = function(){
 	// Skills
 
 	// Check if skills exist within bio and if so create variables and append them to the page
-	if(bio.skills.length > 0 ) {
+	if (bio.skills.length > 0) {
 		// Append the h3 for the skills section to the page
 		$("#header").append(HTMLskillsStart);
 
 		// Create formatted variable for each skill and append to the page
 		for (skill in bio.skills) {
 			var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
-		$("#skills").append(formattedSkill);
+			$("#skills").append(formattedSkill);
 		}
 	}
 }
@@ -74,38 +73,34 @@ bio.display();
 // Create work object
 
 var work = {
-	"jobs" : [
-		{
-			"employer" : "Church of the Cross San Diego",
-			"title" : "Volunteer Web Designer/Developer",
-			"location" : "San Diego, CA (remote)",
-			"dates" : "2015-2016",
-			"description" : "Create wireframes, mockups, and visual design of the church website, as well as develop the site in HTMl, CSS, JS, and PHP.",
-			"url" : "http://www.churchofthecrosssd.com/"
-		},
-		{
-			"employer" : "First Delivery Services",
-			"title" : "Amazon Delivery Attendent",
-			"location" : "San Jose, CA",
-			"dates" : "2015-2016",
-			"description" : "Ensure the secure delivery of packages to Amazon customers throughout the South Bay.",
-			"url" : "http://www.firstdeliveryservice.com/"
-		},
-		{
-			"employer" : "Five Guys Burgers and Fries",
-			"title" : "General Manager",
-			"location" : "San Diego, CA",
-			"dates" : "2012-2015",
-			"description" : "Oversee general operations of the restaurant. Hire, train, retain, and lead a team to provide excellent food and customer service in a clean environment. Handle financials and inventory.",
-			"url" : "http://www.fiveguys.com/"
-		}
-	]
+	"jobs": [{
+		"employer": "Church of the Cross San Diego",
+		"title": "Volunteer Web Designer/Developer",
+		"location": "San Diego, CA (remote)",
+		"dates": "2015-2016",
+		"description": "Create wireframes, mockups, and visual design of the church website, as well as develop the site in HTMl, CSS, JS, and PHP.",
+		"url": "http://www.churchofthecrosssd.com/"
+	}, {
+		"employer": "First Delivery Services",
+		"title": "Amazon Delivery Attendent",
+		"location": "San Jose, CA",
+		"dates": "2015-2016",
+		"description": "Ensure the secure delivery of packages to Amazon customers throughout the South Bay.",
+		"url": "http://www.firstdeliveryservice.com/"
+	}, {
+		"employer": "Five Guys Burgers and Fries",
+		"title": "General Manager",
+		"location": "San Diego, CA",
+		"dates": "2012-2015",
+		"description": "Oversee general operations of the restaurant. Hire, train, retain, and lead a team to provide excellent food and customer service in a clean environment. Handle financials and inventory.",
+		"url": "http://www.fiveguys.com/"
+	}]
 }
 
 
 // Create function to display info in the work object, and encapsulate function within work
 work.display = function() {
-	for(var indexCount = 0; indexCount < work.jobs.length; indexCount++) {
+	for (var indexCount = 0; indexCount < work.jobs.length; indexCount++) {
 
 		// Append the .work-entry div for each job for correct formatting
 		$("#workExperience").append(HTMLworkStart);
@@ -126,7 +121,7 @@ work.display = function() {
 
 		// Append the concantenated workInfo variable to the last .work-entry
 		$(".work-entry:last").append(formattedWorkInfo);
-		}
+	}
 }
 
 work.display();
@@ -135,21 +130,20 @@ work.display();
 // Create the Projects Object
 
 var projects = {
-	"projects" : [
-		{
+	"projects": [{
 			"title": "Responsive Portfolio",
 			"dates": "2016",
 			"description": "A one page, responsive portfolio used to showcase projects. Built using HTML5 semantic tags and a custom CSS grid system.",
 			"images": ["images/portfolio1.png"],
-			"url" : "#"
+			"url": "#"
 		}
 
 	]
 }
 
 // Create the function to display projects' info and encapsulate the function within projects
-projects.display = function(){
-	for(project in projects.projects) {
+projects.display = function() {
+	for (project in projects.projects) {
 		// Append a .project-entry for each project
 		$("#projects").append(HTMLprojectStart);
 
@@ -165,7 +159,7 @@ projects.display = function(){
 
 		// Check to see if a project image is present, and if so format and append the image to the last .project-entry
 		if (projects.projects[project].images.length > 0) {
-			for(image in projects.projects[project].images) {
+			for (image in projects.projects[project].images) {
 				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
 				$(".project-entry:last").append(formattedProjectImage);
 			}
@@ -178,55 +172,49 @@ projects.display();
 // Create the education object
 
 var education = {
-	"schools": [
-		{
-			"name" : "Udacity",
-			"location" : "San Jose, CA",
-			"degree" : "Nanodegree",
-			"majors" : ["Front-End Web Development"],
-			"dates" : "2016",
-			"url" : "https://www.udacity.com/"
-		}
-	],
+	"schools": [{
+		"name": "Udacity",
+		"location": "San Jose, CA",
+		"degree": "Nanodegree",
+		"majors": ["Front-End Web Development"],
+		"dates": "2016",
+		"url": "https://www.udacity.com/"
+	}],
 
 	"onlineCourses": [
 
 		{
-			"title" : "Bootstrap to WordPress",
-			"school" : "Udemy",
-			"dates" : "2015",
-			"url" : "https://www.udemy.com/bootstrap-to-wordpress/"
-		},
-		{
-			"title" : "Practical PHP: Master the Basics and Code Dynamic Websites",
-			"school" : "Udemy",
-			"dates" : "2016",
-			"url" : "https://www.udemy.com/code-dynamic-websites/"
-		},
-		{
-			"title" : "The Complete Web Developer Course",
-			"school" : "Udemy",
-			"dates" : "2015-2016",
-			"url" : "https://www.udemy.com/complete-web-developer-course/"
-		},
-		{
-			"title" : "Ultimate Web Designer & Developer Course: Build 23 Projects!",
-			"school" : "Udemy",
-			"dates" : "2015-2016",
-			"url" : "https://www.udemy.com/web-developer-course/"
-		},
-		{
-			"title" : "JavaScript Basics",
-			"school" : "Udacity",
-			"dates" : "2016",
-			"url" : "https://www.udacity.com/courses/ud804"
+			"title": "Bootstrap to WordPress",
+			"school": "Udemy",
+			"dates": "2015",
+			"url": "https://www.udemy.com/bootstrap-to-wordpress/"
+		}, {
+			"title": "Practical PHP: Master the Basics and Code Dynamic Websites",
+			"school": "Udemy",
+			"dates": "2016",
+			"url": "https://www.udemy.com/code-dynamic-websites/"
+		}, {
+			"title": "The Complete Web Developer Course",
+			"school": "Udemy",
+			"dates": "2015-2016",
+			"url": "https://www.udemy.com/complete-web-developer-course/"
+		}, {
+			"title": "Ultimate Web Designer & Developer Course: Build 23 Projects!",
+			"school": "Udemy",
+			"dates": "2015-2016",
+			"url": "https://www.udemy.com/web-developer-course/"
+		}, {
+			"title": "JavaScript Basics",
+			"school": "Udacity",
+			"dates": "2016",
+			"url": "https://www.udacity.com/courses/ud804"
 		}
 	]
 }
 
 // Create and encapsulate the function used to display education's info
-education.display = function(){
-	for(var indexCount = 0; indexCount < education.schools.length; indexCount++) {
+education.display = function() {
+	for (var indexCount = 0; indexCount < education.schools.length; indexCount++) {
 
 		// Append an .education-entry div for each school in education
 		$("#education").append(HTMLschoolStart);
@@ -250,7 +238,7 @@ education.display = function(){
 	// Append the h3 to the #education div. Must come after the above code for correct formatting
 	$("#education").append(HTMLonlineClasses);
 
-	for(var indexCount = 0; indexCount < education.onlineCourses.length; indexCount++) {
+	for (var indexCount = 0; indexCount < education.onlineCourses.length; indexCount++) {
 
 		// Append an education entry for each onlineCourse in education
 		$("#education").append(HTMLschoolStart);
@@ -285,7 +273,7 @@ function inName() {
 	// Create variable for the first name
 	// Access the first name in splitName, slice the first letter and make it uppercase
 	// Slice the rest of the name and make it lowercase
-	var firstName = splitName[0].slice(0,1).toUpperCase() + splitName[0].slice(1).toLowerCase();
+	var firstName = splitName[0].slice(0, 1).toUpperCase() + splitName[0].slice(1).toLowerCase();
 
 	// Create variable for last name
 	// Access the last name in splitName and make it uppercase
@@ -309,7 +297,7 @@ $(document).click(function(loc) {
 	var x = loc.pageX;
 	var y = loc.pageY;
 
-	logClicks(x,y);
+	logClicks(x, y);
 });
 
 // Append the interactive googleMap to the screen
