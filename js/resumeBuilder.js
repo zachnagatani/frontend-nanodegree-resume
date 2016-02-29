@@ -22,7 +22,7 @@ bio.display = function() {
 	// Create and append formatted variables for all bio info
 	var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
 	var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
-	$("#header").prepend(formattedHeaderRole).prepend(formattedHeaderName);;
+	$("#header").prepend(formattedHeaderRole).prepend(formattedHeaderName);
 
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
@@ -30,21 +30,21 @@ bio.display = function() {
 	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 	$("#topContacts").append(formattedMobile)
-	.append(formattedEmail)
-	.append(formattedGithub)
-	.append(formattedTwitter)
-	.append(formattedLocation);
+		.append(formattedEmail)
+		.append(formattedGithub)
+		.append(formattedTwitter)
+		.append(formattedLocation);
 
 	$("#footerContacts").append(formattedMobile)
-	.append(formattedEmail)
-	.append(formattedGithub)
-	.append(formattedTwitter)
-	.append(formattedLocation);
+		.append(formattedEmail)
+		.append(formattedGithub)
+		.append(formattedTwitter)
+		.append(formattedLocation);
 
 	var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-		var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 	$("#header").append(formattedBioPic)
-	.append(formattedWelcomeMsg);
+		.append(formattedWelcomeMsg);
 
 
 	// Skills
@@ -55,8 +55,9 @@ bio.display = function() {
 		$("#header").append(HTMLskillsStart);
 
 		// Create formatted variable for each skill and append to the page
-		for (var skill in bio.skills) {
-			var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+		var len = bio.skills.length;
+		for (var i = 0; i < len; i++) {
+			var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
 			$("#skills").append(formattedSkill);
 		}
 	}
@@ -94,7 +95,8 @@ var work = {
 
 // Create function to display info in the work object, and encapsulate function within work
 work.display = function() {
-	for (var indexCount = 0; indexCount < work.jobs.length; indexCount++) {
+	var len = work.jobs.length;
+	for (var indexCount = 0; indexCount < len; indexCount++) {
 
 		// Append the .work-entry div for each job for correct formatting
 		$("#workExperience").append(HTMLworkStart);
@@ -113,7 +115,7 @@ work.display = function() {
 		// Append the title to the last .work-entry created
 		// Append the concantenated workInfo variable to the last .work-entry
 		$(".work-entry:last").append(formattedEmployerTitle)
-		.append(formattedWorkInfo);
+			.append(formattedWorkInfo);
 	}
 };
 
@@ -136,22 +138,23 @@ var projects = {
 
 // Create the function to display projects' info and encapsulate the function within projects
 projects.display = function() {
-	for (var project in projects.projects) {
+	var len = projects.projects.length;
+	for (var indexCount = 0; indexCount < len; indexCount++) {
 		// Append a .project-entry for each project
 		$("#projects").append(HTMLprojectStart);
 
 		// Create and append formatted variables for all project info
-		var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title).replace("#", projects.projects[project].url);
-		var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-		var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[indexCount].title).replace("#", projects.projects[indexCount].url);
+		var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[indexCount].dates);
+		var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[indexCount].description);
 		$(".project-entry:last").append(formattedProjectTitle)
-		.append(formattedProjectDates)
-		.append(formattedProjectDescription);
+			.append(formattedProjectDates)
+			.append(formattedProjectDescription);
 
 		// Check to see if a project image is present, and if so format and append the image to the last .project-entry
-		if (projects.projects[project].images.length > 0) {
-			for (image in projects.projects[project].images) {
-				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
+		if (projects.projects[indexCount].images.length > 0) {
+			for (var image in projects.projects[indexCount].images) {
+				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[indexCount].images);
 				$(".project-entry:last").append(formattedProjectImage);
 			}
 		}
@@ -205,7 +208,8 @@ var education = {
 
 // Create and encapsulate the function used to display education's info
 education.display = function() {
-	for (var indexCount = 0; indexCount < education.schools.length; indexCount++) {
+	var len = education.schools.length;
+	for (var indexCount = 0; indexCount < len; indexCount++) {
 
 		// Append an .education-entry div for each school in education
 		$("#education").append(HTMLschoolStart);
@@ -222,15 +226,16 @@ education.display = function() {
 
 		// Append the info the last .education-entry
 		$(".education-entry:last").append(formattedSchoolHeader)
-		.append(formattedSchoolLocation)
-		.append(formattedSchoolDates)
-		.append(formattedSchoolMajor);
+			.append(formattedSchoolLocation)
+			.append(formattedSchoolDates)
+			.append(formattedSchoolMajor);
 	}
 
 	// Append the h3 to the #education div. Must come after the above code for correct formatting
 	$("#education").append(HTMLonlineClasses);
 
-	for (var indexCount = 0; indexCount < education.onlineCourses.length; indexCount++) {
+	var len = education.onlineCourses.length;
+	for (var indexCount = 0; indexCount < len; indexCount++) {
 
 		// Append an education entry for each onlineCourse in education
 		$("#education").append(HTMLschoolStart);
@@ -246,8 +251,8 @@ education.display = function() {
 
 		// Append the various info the page
 		$(".education-entry:last").append(formattedOnlineHeader)
-		.append(formattedOnlineDates)
-		.append(formattedOnlineURL);
+			.append(formattedOnlineDates)
+			.append(formattedOnlineURL);
 	}
 };
 
