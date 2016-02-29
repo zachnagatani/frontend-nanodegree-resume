@@ -105,18 +105,18 @@ var work = {
 
 // Create function to display info in the work object, and encapsulate function within work
 work.display = function() {
-	for(var indexCount = 0; indexCount < work["jobs"].length; indexCount++) {
+	for(var indexCount = 0; indexCount < work.jobs.length; indexCount++) {
 
 		// Append the .work-entry div for each job for correct formatting
 		$("#workExperience").append(HTMLworkStart);
 
 		// Create formatted variables for the info in the work object
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[indexCount]["employer"]).replace("#", work.jobs[indexCount]["url"]);
-		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[indexCount]["title"]);
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[indexCount].employer).replace("#", work.jobs[indexCount].url);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[indexCount].title);
 		var formattedEmployerTitle = formattedEmployer + formattedTitle;
-		var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[indexCount]["dates"]);
-		var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[indexCount]["location"]);
-		var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[indexCount]["description"]);
+		var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[indexCount].dates);
+		var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[indexCount].location);
+		var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[indexCount].description);
 
 		// Concantenate variables for DRY code
 		var formattedWorkInfo = formattedWorkDates + formattedWorkLocation + formattedWorkDescription;
@@ -154,19 +154,19 @@ projects.display = function(){
 		$("#projects").append(HTMLprojectStart);
 
 		// Create and append formatted variables for all project info
-		var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project]["title"]).replace("#", projects.projects[project]["url"]);
+		var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title).replace("#", projects.projects[project].url);
 		$(".project-entry:last").append(formattedProjectTitle);
 
-		var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project]["dates"]);
+		var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
 		$(".project-entry:last").append(formattedProjectDates);
 
-		var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project]["description"]);
+		var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
 		$(".project-entry:last").append(formattedProjectDescription);
 
 		// Check to see if a project image is present, and if so format and append the image to the last .project-entry
 		if (projects.projects[project].images.length > 0) {
 			for(image in projects.projects[project].images) {
-				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project]["images"]);
+				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
 				$(".project-entry:last").append(formattedProjectImage);
 			}
 		}
@@ -314,9 +314,3 @@ $(document).click(function(loc) {
 
 // Append the interactive googleMap to the screen
 $("#mapDiv").append(googleMap);
-
-
-
-
-
-

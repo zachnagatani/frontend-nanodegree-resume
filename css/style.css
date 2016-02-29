@@ -1,3 +1,5 @@
+/* Global */
+
 body,
 div,
 ul,
@@ -9,8 +11,8 @@ h3,
 h4,
 h5,
 h6 {
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
   font-family: "Raleway", sans-serif;
 }
 
@@ -19,9 +21,9 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"],
 button {
-    -webkit-box-sizing: content-box;
-       -moz-box-sizing: content-box;
-            box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 /* Reset `button` and button-style `input` default styles */
@@ -29,23 +31,26 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"],
 button {
-    background: none;
-    border: 0;
-    color: inherit;
-    /* cursor: default; */
-    font: inherit;
-    line-height: normal;
-    overflow: visible;
-    padding: 0;
-    -webkit-appearance: button; /* for input */
-    -webkit-user-select: none; /* for button */
-       -moz-user-select: none;
-        -ms-user-select: none;
+  background: none;
+  border: 0;
+  color: inherit;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: button;
+ /* for input */
+  -webkit-user-select: none;
+ /* for button */
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
+
 input::-moz-focus-inner,
 button::-moz-focus-inner {
-    border: 0;
-    padding: 0;
+  border: 0;
+  padding: 0;
 }
 
 
@@ -78,41 +83,10 @@ body {
   margin: 0 auto;
 }
 
-.clear-fix {
-  overflow: auto;
-}
-
-.img-responsive {
-  max-width: 100%;
-}
-
-.education-entry,
-.work-entry,
-.project-entry {
-  padding: 0 5%;
-}
-
-#education {
-  margin-bottom: 5px;
-}
-
 h1 {
   font-size: 40px;
   color: #0E5492;
   line-height: 48px;
-  text-align: center;
-}
-
-#main {
-  background: #0E5492;
-}
-
-.role {
-  font-weight: 600;
-  color: #333;
-}
-
-.center-text {
   text-align: center;
 }
 
@@ -142,25 +116,7 @@ h2,
 h3,
 h4,
 h5 {
-  padding:10px 5%;
-
-}
-
-.date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: left;
-}
-
-.location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: right;
-
+  padding: 10px 5%;
 }
 
 p {
@@ -180,41 +136,34 @@ a:hover {
   font-weight: bold;
 }
 
-.welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #000;
-  line-height: 28px;
+img {
+  padding: 10px;
 }
 
-#skills-h3 {
-  color: #333;
-  display: none;
+span {
+  padding: 5px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Helper Classes */
+
+.clear-fix {
+  overflow: auto;
+}
+
+.img-responsive {
+  max-width: 100%;
+}
+
+.center-text {
+  text-align: center;
 }
 
 .orange {
   background-color: #43B68B;
-}
-
-#lets-connect {
-  background: #43B68B;
-}
-
-#workExperience {
-  margin-bottom: 5px;
-}
-
-#projects {
-  background: #fff;
-  margin-bottom: 5px;
-}
-
-#lets-connect h2 {
-  color: #fff;
-}
-
-#lets-connect span.orange-text {
-  color: #333;
 }
 
 .orange-text {
@@ -230,17 +179,11 @@ a:hover {
 .gray {
   background-color: #fff;
   padding-bottom: 10px;
-  clear:both;
+  clear: both;
 }
 
 .dark-gray {
   background-color: #4a4a4a;
-}
-
-/* TODO: Replace with image later */
-#header {
-  background-color: #fff;
-  margin-bottom: 5px;
 }
 
 .flex-box {
@@ -256,8 +199,50 @@ a:hover {
   padding: 2.5% 5%;
 }
 
-ul {
-  list-style-type: none;
+.date-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999;
+  line-height: 16px;
+  float: left;
+}
+
+.location-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999;
+  line-height: 16px;
+  float: right;
+}
+
+/* Main */
+
+#main {
+  background: #0E5492;
+}
+
+/* Header */
+
+#header {
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+
+.role {
+  font-weight: 600;
+  color: #333;
+}
+
+.welcome-message {
+  font-style: italic;
+  font-size: 18px;
+  color: #000;
+  line-height: 28px;
+}
+
+#skills-h3 {
+  color: #333;
+  display: none;
 }
 
 .biopic {
@@ -267,16 +252,50 @@ ul {
   display: none;
 }
 
-img {
-  padding: 10px;
-}
-
-span {
-  padding: 5px;
-}
-
 #lets-connect {
   text-align: center;
+}
+
+
+/* Object Entries*/
+
+.education-entry,
+.work-entry,
+.project-entry {
+  padding: 0 5%;
+}
+
+/* Work Experience */
+
+#workExperience {
+  margin-bottom: 5px;
+}
+
+/* Projects */
+
+#projects {
+  background: #fff;
+  margin-bottom: 5px;
+}
+
+/* Education */
+
+#education {
+  margin-bottom: 5px;
+}
+
+/* Let's Connect */
+
+#lets-connect {
+  background: #43B68B;
+}
+
+#lets-connect h2 {
+  color: #fff;
+}
+
+#lets-connect span.orange-text {
+  color: #333;
 }
 
 #lets-connect .white-text {
