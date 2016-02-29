@@ -1,5 +1,11 @@
 /* Global */
 
+html, body, #main {
+  background: #0E5492;
+  height: 100%;
+  width: 100%;
+}
+
 body,
 div,
 ul,
@@ -162,28 +168,24 @@ ul {
   text-align: center;
 }
 
-.orange {
+.green {
   background-color: #43B68B;
 }
 
-.orange-text {
+.dark-text {
   color: #333;
   font-weight: 400;
 }
 
-.white-text {
+.green-text {
   font-weight: bold;
   color: #049860;
 }
 
-.gray {
+#workExperience, #education {
   background-color: #fff;
   padding-bottom: 10px;
   clear: both;
-}
-
-.dark-gray {
-  background-color: #4a4a4a;
 }
 
 .flex-box {
@@ -217,9 +219,6 @@ ul {
 
 /* Main */
 
-#main {
-  background: #0E5492;
-}
 
 /* Header */
 
@@ -284,49 +283,7 @@ ul {
   margin-bottom: 5px;
 }
 
-/* Let's Connect */
-
-#lets-connect {
-  background: #43B68B;
-}
-
-#lets-connect h2 {
-  color: #fff;
-}
-
-#lets-connect span.orange-text {
-  color: #333;
-}
-
-#lets-connect .white-text {
- color: #fff;
-}
-
-/* Media queries to handle various device widths */
-
-@media only screen and (max-width: 1024px) {
-  #lets-connect {
-    margin-top: 2%;
-  }
-}
-
-@media only screen and (max-width:900px) {
-  .biopic {
-    width: 175px;
-  }
-}
-
-@media only screen and (max-width: 750px) {
-  #lets-connect {
-    margin-top: 10%;
-  }
-  .biopic {
-    width: 150px;
-  }
-  .welcome-message {
-    display: none;
-  }
-}
+/* Map */
 
 #map {
   display: block;
@@ -336,9 +293,47 @@ ul {
 #mapDiv {
   height: 400px;
   width: 100%;
-  margin-bottom: 6px;
-  padding-bottom: 5%;
   background: #fff;
+}
+
+/* Let's Connect */
+
+#lets-connect {
+  background: #43B68B;
+  position: relative;
+  top: 11px;
+}
+
+#lets-connect h2 {
+  color: #fff;
+}
+
+#lets-connect span..dark-text {
+  color: #333;
+}
+
+#lets-connect .green-text {
+ color: #fff;
+}
+
+/* Media queries to handle various device widths */
+
+@media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width:900px) {
+  .biopic {
+    width: 175px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .biopic {
+    width: 150px;
+  }
+  .welcome-message {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 750px) {

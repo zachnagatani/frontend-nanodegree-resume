@@ -61,12 +61,12 @@ bio.display = function() {
 		$("#header").append(HTMLskillsStart);
 
 		// Create formatted variable for each skill and append to the page
-		for (skill in bio.skills) {
+		for (var skill in bio.skills) {
 			var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
 			$("#skills").append(formattedSkill);
 		}
 	}
-}
+};
 
 bio.display();
 
@@ -122,7 +122,7 @@ work.display = function() {
 		// Append the concantenated workInfo variable to the last .work-entry
 		$(".work-entry:last").append(formattedWorkInfo);
 	}
-}
+};
 
 work.display();
 
@@ -143,7 +143,7 @@ var projects = {
 
 // Create the function to display projects' info and encapsulate the function within projects
 projects.display = function() {
-	for (project in projects.projects) {
+	for (var project in projects.projects) {
 		// Append a .project-entry for each project
 		$("#projects").append(HTMLprojectStart);
 
@@ -165,7 +165,7 @@ projects.display = function() {
 			}
 		}
 	}
-}
+};
 
 projects.display();
 
@@ -257,7 +257,7 @@ education.display = function() {
 		$(".education-entry:last").append(formattedOnlineDates);
 		$(".education-entry:last").append(formattedOnlineURL);
 	}
-}
+};
 
 education.display();
 
