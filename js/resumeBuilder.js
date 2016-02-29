@@ -21,36 +21,30 @@ bio.display = function() {
 
 	// Create and append formatted variables for all bio info
 	var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
-	$("#header").prepend(formattedHeaderRole);
-
 	var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
-	$("#header").prepend(formattedHeaderName);
+	$("#header").prepend(formattedHeaderRole).prepend(formattedHeaderName);;
 
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-	$("#topContacts").append(formattedMobile);
-	$("#footerContacts").append(formattedMobile);
-
 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-	$("#topContacts").append(formattedEmail);
-	$("#footerContacts").append(formattedEmail);
-
 	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-	$("#topContacts").append(formattedGithub);
-	$("#footerContacts").append(formattedGithub);
-
 	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-	$("#topContacts").append(formattedTwitter);
-	$("#footerContacts").append(formattedTwitter);
-
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-	$("#topContacts").append(formattedLocation);
-	$("#footerContacts").append(formattedLocation);
+	$("#topContacts").append(formattedMobile)
+	.append(formattedEmail)
+	.append(formattedGithub)
+	.append(formattedTwitter)
+	.append(formattedLocation);
+
+	$("#footerContacts").append(formattedMobile)
+	.append(formattedEmail)
+	.append(formattedGithub)
+	.append(formattedTwitter)
+	.append(formattedLocation);
 
 	var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-	$("#header").append(formattedBioPic);
-
-	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-	$("#header").append(formattedWelcomeMsg);
+		var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	$("#header").append(formattedBioPic)
+	.append(formattedWelcomeMsg);
 
 
 	// Skills
@@ -117,10 +111,9 @@ work.display = function() {
 		var formattedWorkInfo = formattedWorkDates + formattedWorkLocation + formattedWorkDescription;
 
 		// Append the title to the last .work-entry created
-		$(".work-entry:last").append(formattedEmployerTitle);
-
 		// Append the concantenated workInfo variable to the last .work-entry
-		$(".work-entry:last").append(formattedWorkInfo);
+		$(".work-entry:last").append(formattedEmployerTitle)
+		.append(formattedWorkInfo);
 	}
 };
 
@@ -149,13 +142,11 @@ projects.display = function() {
 
 		// Create and append formatted variables for all project info
 		var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title).replace("#", projects.projects[project].url);
-		$(".project-entry:last").append(formattedProjectTitle);
-
 		var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-		$(".project-entry:last").append(formattedProjectDates);
-
 		var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-		$(".project-entry:last").append(formattedProjectDescription);
+		$(".project-entry:last").append(formattedProjectTitle)
+		.append(formattedProjectDates)
+		.append(formattedProjectDescription);
 
 		// Check to see if a project image is present, and if so format and append the image to the last .project-entry
 		if (projects.projects[project].images.length > 0) {
@@ -224,15 +215,16 @@ education.display = function() {
 		var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[indexCount].degree);
 		// Concantenate name and degree for proper styling
 		var formattedSchoolHeader = formattedSchoolName + formattedSchoolDegree;
+
 		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[indexCount].location);
 		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[indexCount].dates);
 		var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[indexCount].majors);
 
 		// Append the info the last .education-entry
-		$(".education-entry:last").append(formattedSchoolHeader);
-		$(".education-entry:last").append(formattedSchoolLocation);
-		$(".education-entry:last").append(formattedSchoolDates);
-		$(".education-entry:last").append(formattedSchoolMajor);
+		$(".education-entry:last").append(formattedSchoolHeader)
+		.append(formattedSchoolLocation)
+		.append(formattedSchoolDates)
+		.append(formattedSchoolMajor);
 	}
 
 	// Append the h3 to the #education div. Must come after the above code for correct formatting
@@ -253,9 +245,9 @@ education.display = function() {
 		var formattedSchoolInfo = formattedSchoolLocation + formattedSchoolDegree + formattedSchoolMajor + formattedSchoolDates;
 
 		// Append the various info the page
-		$(".education-entry:last").append(formattedOnlineHeader);
-		$(".education-entry:last").append(formattedOnlineDates);
-		$(".education-entry:last").append(formattedOnlineURL);
+		$(".education-entry:last").append(formattedOnlineHeader)
+		.append(formattedOnlineDates)
+		.append(formattedOnlineURL);
 	}
 };
 
@@ -287,7 +279,7 @@ function inName() {
 }
 
 // Append the button used to modify the header name/internationalName
-$("#header").prepend(internationalizeButton);
+// $("#header").prepend(internationalizeButton);
 
 // On the click event, create function that passes jQuery's location object as a parameter
 // Store loc.pageX as x
