@@ -186,27 +186,27 @@ var education = {
 		{
 			"title": "Bootstrap to WordPress",
 			"school": "Udemy",
-			"dates": "2015",
+			"date": "2015",
 			"url": "https://www.udemy.com/bootstrap-to-wordpress/"
 		}, {
 			"title": "Practical PHP: Master the Basics and Code Dynamic Websites",
 			"school": "Udemy",
-			"dates": "2016",
+			"date": "2016",
 			"url": "https://www.udemy.com/code-dynamic-websites/"
 		}, {
 			"title": "The Complete Web Developer Course",
 			"school": "Udemy",
-			"dates": "2015-2016",
+			"date": "2015-2016",
 			"url": "https://www.udemy.com/complete-web-developer-course/"
 		}, {
 			"title": "Ultimate Web Designer & Developer Course: Build 23 Projects!",
 			"school": "Udemy",
-			"dates": "2015-2016",
+			"date": "2015-2016",
 			"url": "https://www.udemy.com/web-developer-course/"
 		}, {
 			"title": "JavaScript Basics",
 			"school": "Udacity",
-			"dates": "2016",
+			"date": "2016",
 			"url": "https://www.udacity.com/courses/ud804"
 		}
 	]
@@ -248,7 +248,7 @@ education.display = function() {
 		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[indexCount].school);
 		// Concatenate title and school for proper styling
 		var formattedOnlineHeader = formattedOnlineTitle + formattedOnlineSchool;
-		var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[indexCount].dates);
+		var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[indexCount].date);
 		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[indexCount].url).replace("#", education.onlineCourses[indexCount].url);
 		var formattedSchoolInfo = formattedSchoolLocation + formattedSchoolDegree + formattedSchoolMajor + formattedSchoolDates;
 
