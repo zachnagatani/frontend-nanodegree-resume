@@ -292,3 +292,11 @@ var mapView = {
 };
 
 octopus.init();
+
+// Log x and y cooridinates of page clicks
+$(document).click(function(loc) {
+	var x = loc.pageX;
+	var y = loc.pageY;
+
+	logClicks(x, y);
+});
